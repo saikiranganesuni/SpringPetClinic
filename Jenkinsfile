@@ -20,12 +20,12 @@ pipeline{
         }
         stage('package'){
             steps{
-                ssh 'mvn package'
+                sh 'mvn package'
             }
         }
         stage('deploy'){
             steps{
-                ssh 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
+                sh 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
             }
         }
     }
