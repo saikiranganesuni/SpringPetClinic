@@ -10,12 +10,12 @@ pipeline{
     
         stage('build'){
             steps{
-                ssh 'mvn compile'
+                sh 'mvn compile'
             }
         }
         stage('test'){
             steps{
-                ssh 'mvn test'
+                sh 'mvn test'
             }
         }
         stage('package'){
