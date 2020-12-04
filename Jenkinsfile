@@ -10,22 +10,22 @@ pipeline{
     
         stage('build'){
             steps{
-                ssh 'mvn compile'
+                bat 'mvn compile'
             }
         }
         stage('test'){
             steps{
-                ssh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('package'){
             steps{
-                ssh 'mvn package'
+                echo    'mvn package'
             }
         }
         stage('deploy'){
             steps{
-                ssh 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
+                echo 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
             }
         }
     }
